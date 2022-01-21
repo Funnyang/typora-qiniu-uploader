@@ -47,12 +47,8 @@ func main() {
 	qClient := pkg.NewQiNiuClient(config.AccessKey, config.SecretKey, config.Bucket, config.UseHTTPS, config.UseCdnDomains, config.Domain, config.SubDir)
 	imageUris := qClient.UploadImages(images)
 
-	for _, imageUri := range imageUris {
-		log.Println(imageUri)
-	}
 	log.Println("Jobs done!")
 	for _, imageUri := range imageUris {
-		// use fmt instead of log because typora will recognize image url from stdout
 		fmt.Println(imageUri)
 	}
 
